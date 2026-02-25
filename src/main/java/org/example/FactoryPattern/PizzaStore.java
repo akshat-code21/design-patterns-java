@@ -1,14 +1,10 @@
 package org.example.FactoryPattern;
 
-public class PizzaStore {
-    SimplePizzaFactory factory;
-    public PizzaStore(SimplePizzaFactory factory){
-        this.factory = factory;
-    }
+public abstract class PizzaStore {
     Pizza orderPizza(String type){
         Pizza pizza;
 
-        pizza = factory.createPizza(type);
+        pizza = createPizza(type);
 
         pizza.prepare();
         pizza.bake();
@@ -16,4 +12,5 @@ public class PizzaStore {
         pizza.box();
         return pizza;
     }
+    public abstract Pizza createPizza(String type);
 }
