@@ -1,23 +1,14 @@
 package org.example.FactoryPattern;
 
-public class CheesePizza extends Pizza{
-    @Override
+public class CheesePizza extends Pizza {
+    PizzaIngredientFactory ingredientFactory;
+    public CheesePizza(PizzaIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
+    }
     void prepare() {
-        System.out.println("preparing cheese pizza");
-    }
-
-    @Override
-    void bake() {
-        System.out.println("baking cheese pizza");
-    }
-
-    @Override
-    void cut() {
-        System.out.println("cutting cheese pizza");
-    }
-
-    @Override
-    void box() {
-        System.out.println("boxing cheese pizza");
+        System.out.println("Preparing " + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        cheese = ingredientFactory.createCheese();
     }
 }
