@@ -1,1 +1,1 @@
-# Repo for Implementation of Different Design Patterns from the Book `Head First Design Patterns`
+# Repo for Implementation of Different Design Patterns from the Book `Head First Design Patterns` & `Illustrations given in class`
